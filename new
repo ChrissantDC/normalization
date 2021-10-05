@@ -65,14 +65,18 @@ def main():
         c.append(i[0])
 
     final_string = list(dict.fromkeys(c))  # search for limit of dictionary in python
-    print(final_string)
+    # print(final_string)
     print('Number of URLs: ' + str(len(final_string)))
 
+    output = ''
+    for i in final_string:
+        output += i + '\n'
+        # print(output)
     # print('this is a')
     # print(a)
 
     with open('Output.txt', "w") as Test_Write:
-        Test_Write.write(str(final_string))
+        Test_Write.write(output)
 
 
 main()
