@@ -33,14 +33,14 @@ def main():
             if len(_x) > 1:
                 y.append(_x[1])
 
-    print("this is y")
-    print(y)
+    # print("this is y")
+    # print(y)
 
     for i in y:
         _y = i.split(',')
         z.append(_y[0].strip('""'))
-    print('this is z')
-    print(z)
+    # print('this is z')
+    # print(z)
 
     for i in z:
         _z = i.split('://')
@@ -48,21 +48,21 @@ def main():
             if len(_z) > 1:
                 a.append(_z[1])
 
-    print("this is a")
-    print(a)
+    # print("this is a")
+    # print(a)
 
     for i in a:
         _a = i.split('/')
         b.append(_a)
 
-    print('this is b')
-    print(b)
-    print(b[0][1])
+    # print('this is b')
+    # print(b)
+    # print(b[0][0])
 
     for i in b:
         c.append(i[0])
 
-    final_string = list(dict.fromkeys(a))  # search for limit of dictionary in python
+    final_string = list(dict.fromkeys(c))  # search for limit of dictionary in python
     print(final_string)
     # print('this is a')
     # print(a)
