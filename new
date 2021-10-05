@@ -1,0 +1,83 @@
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# File_Name = input("")
+# x = File_Name.split() #String split by spacebar.
+Final_Text = ''
+with open('disk1.gsd', "r") as file_Read:
+
+    size_to_read = 10
+
+    file_Read_contents = file_Read.read(size_to_read)
+
+    while len(file_Read_contents) > 0:
+        # print(file_Read_contents)
+        Final_Text += file_Read_contents
+        file_Read_contents = file_Read.read(size_to_read)
+
+# print(Final_Text)
+
+x = Final_Text.split('\n') #String split by line.
+# print(x[0])
+
+y = [] #this will store http:// and link name
+z = [] #this will divide link name and /
+a = [] #this will store the link names only
+b = []
+c = []
+
+for i in x:
+    _x = i.split('"url": ')
+    # print('this is _x')
+    # print(_x[1])
+    if _x[0] != 'http':
+        if len(_x) > 1:
+            y.append(_x[1])
+
+print("this is y")
+print(y)
+
+for i in y:
+    _y = i.split(',')
+    z.append(_y[0].strip('""'))
+print('this is z')
+print(z)
+
+for i in z:
+    _z = i.split('://')
+    if _z[0] != 'http':
+        if len(_z) > 1:
+            a.append(_z[1])
+
+print("this is a")
+print(a)
+
+for i in a:
+    _a = i.split('/')
+    b.append(_a)
+
+
+print('this is b')
+print(b)
+print(b[0][1])
+
+for i in b:
+    c.append(i[0])
+
+final_string = list(dict.fromkeys(a)) #search for limit of dictionary in python
+print(final_string)
+# print('this is a')
+# print(a)
