@@ -1,8 +1,10 @@
 import time
-
+from datetime import datetime
+start_time = datetime.now()
 
 def main():
     Final_Text = ''
+    print('Start time: ' + str(start_time))
     with open('disk1.gsd', "r") as file_Read:
 
         size_to_read = 10
@@ -64,10 +66,13 @@ def main():
 
     final_string = list(dict.fromkeys(c))  # search for limit of dictionary in python
     print(final_string)
+    print('Number of URLs: ' + str(len(final_string)))
+
     # print('this is a')
     # print(a)
 
 
-start_time = time.time()
 main()
-print("--- %s seconds ---" % (time.time() - start_time))
+end_time = datetime.now()
+print('End time:' + str(end_time))
+print('Duration: {}'.format(end_time - start_time))
