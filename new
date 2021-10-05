@@ -71,6 +71,9 @@ def main():
     # print('this is a')
     # print(a)
 
+    with open('Output.txt', "w") as Test_Write:
+        Test_Write.write(str(final_string))
+
 
 main()
 end_time = datetime.now()
